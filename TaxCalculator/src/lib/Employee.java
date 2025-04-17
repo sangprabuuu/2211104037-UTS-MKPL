@@ -45,6 +45,7 @@ public class Employee {
 		
 		childNames = new LinkedList<String>();
 		childIdNumbers = new LinkedList<String>();
+		children = new LinkedList<>();
 	}
 	
 	/**
@@ -81,8 +82,7 @@ public class Employee {
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
+    		children.add(new Child(childName, childIdNumber));
 	}
 	
 	public int getAnnualIncomeTax() {
@@ -96,6 +96,6 @@ public class Employee {
 			monthWorkingInYear = 12;
 		}
 		
-		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), childIdNumbers.size());
+		return TaxFunction.calculateTax(monthlySalary, otherMonthlyIncome, monthWorkingInYear, annualDeductible, spouseIdNumber.equals(""), children.size());
 	}
 }
