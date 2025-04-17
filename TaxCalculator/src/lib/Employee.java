@@ -65,6 +65,7 @@ public class Employee {
         monthlySalary = (int) (monthlySalary * 1.5);
     }
 }
+
 	
 	public void setAnnualDeductible(int deductible) {	
 		this.annualDeductible = deductible;
